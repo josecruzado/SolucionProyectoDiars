@@ -102,5 +102,7 @@ namespace CapaDominio.Entidades
         {
             return periodoDePago;
         }
+
+
     }
 }

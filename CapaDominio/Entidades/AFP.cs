@@ -8,14 +8,21 @@ namespace CapaDominio.Entidades
 {
     public class AFP
     {
-        private float porcentajeDescuentoAFP { set; get; }
+        private String nombreAFP;
+        private float porcentajeDescuentoAFP;
 
-
+        public void setNombreAFP(String nombreAFP)
+        {
+            this.nombreAFP = nombreAFP;
+        }
+        public String getNombreAFP()
+        {
+            return nombreAFP;
+        }
         public void setPorcentajeDescuentoAFP(float porcentajeDescuentoAFP)
         {
             this.porcentajeDescuentoAFP = porcentajeDescuentoAFP;
         }
-
         public float getPorcentajeDescuentoAFP()
         {
             return porcentajeDescuentoAFP;

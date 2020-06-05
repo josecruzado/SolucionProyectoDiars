@@ -23,7 +23,6 @@ namespace CapaDominio.Entidades
         {
             return direccion;
         }
-
         public void setDni(String dni)
         {
             this.dni = dni;
@@ -45,10 +44,6 @@ namespace CapaDominio.Entidades
             return this.gradoAcademico;
         }
         public void setNombre (String nombre)
-        {
-            this.nombre = nombre;
-        }
-
         public String getNombre()
         {
             return nombre
@@ -62,5 +57,5 @@ namespace CapaDominio.Entidades
             return telefono;
         }
 
-}
+    }
 }
