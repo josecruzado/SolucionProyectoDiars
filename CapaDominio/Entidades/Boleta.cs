@@ -11,7 +11,7 @@ namespace CapaDominio.Entidades
         private DateTime fechaDePago { set; get; }
         private int idBoletaDePago { set; get; }
 
-        private int x;
+        private int x;h
         private int s;
     }
 }
