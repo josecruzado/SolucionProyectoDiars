@@ -18,7 +18,7 @@ namespace CapaDominio.Entidades
         
         public void setAsignacionFamiliar(double asignacionfamiliar)
         {
-            this.asignacionFamiliar= asignacionFamiliar;
+            this.asignacionFamiliar= asignacionfamiliar;
         }
 
         public double getAsignacionFamiliar()
@@ -38,7 +38,7 @@ namespace CapaDominio.Entidades
 
         public void setSueldoBasico(double sueldoBasico)
         {
-            this.descuentoPorAFP = descuentoPorAFP;
+            this.sueldoBasico = sueldoBasico;
         }
 
         public double getSueldoBasico()
