@@ -19,7 +19,7 @@ namespace CapaDominio.Entidades
 
 		public int getPlanilla()
         {
-			return idPlanilla
+            return idPlanilla;
         }
 
 		public void setFechaPlanilla(DateTime fechaPlanilla)
