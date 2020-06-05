@@ -76,7 +76,7 @@ namespace CapaDominio.Entidades
             return totalIngresos;
         }
 
-        public void setTotalDeDescuentos( double totalDescuentos)
+        public void setTotalDeDescuentos(double totalDescuentos)
         {
             this.totalDescuentos = totalDescuentos;
         }
