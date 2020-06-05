@@ -16,6 +16,56 @@ namespace CapaDominio.Entidades
         private float montoPorReintegros{ set; get; }
         private PeriodoDePago periodoDePago { set; get; }
 
+        public void setMontoDeOtrosDescuentos(float montoDeOtrosDescuentos)
+        {
+            this.montoDeOtrosDescuentos = montoDeOtrosDescuentos;
+        }
+
+        public float getMontoDeOtrosDescuentos()
+        {
+            return montoDeOtrosDescuentos;
+        }
+
+        public void setMontoDeOtrosIngresos(float montoDeOtrosIngresos)
+        {
+            this.montoDeOtrosIngresos = montoDeOtrosIngresos;
+        }
+
+        public float getMontoDeOtrosIngresos()
+        {
+            return montoDeOtrosIngresos;
+        }
+
+        public void setMontoPorAdelantos(float montoPorAdelantos)
+        {
+            this.montoPorAdelantos = montoPorAdelantos;
+        }
+
+        public float getMontoPorAdelantos()
+        {
+            return montoPorAdelantos;
+        }
+
+        public void setMontoPorHorasAusentes(float montoPorHorasAusentes)
+        {
+            this.montoPorHorasAusentes = montoPorHorasAusentes;
+        }
+
+        public float getMontoPorHorasAusentes()
+        {
+            return montoPorHorasAusentes;
+        }
+
+        public void setMontoPorHorasExtras(float montoPorHorasExtras)
+        {
+            this.montoPorHorasExtras = montoPorHorasExtras;
+        }
+
+        public float getMontoPorHorasExtra()
+        {
+            return montoPorHorasExtras;
+        }
+
         private double calcularConceptosDeIngresos()
         {
 
