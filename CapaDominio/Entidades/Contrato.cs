@@ -48,7 +48,7 @@ namespace CapaDominio.Entidades
 
         public void calcularSueldoNeto()
         {
-
+            
         }
 
         public void calcularTotalDeDescuento()
@@ -125,7 +125,8 @@ namespace CapaDominio.Entidades
                         }
                         else
                         {
-                            return false;                        }
+                            return false;                        
+                        }
                     }
                 case "Magister":
                     {
