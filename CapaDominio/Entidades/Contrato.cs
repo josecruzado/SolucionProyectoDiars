@@ -14,60 +14,31 @@ namespace CapaDominio.Entidades
         private Boolean estadoContrato { get; set; }
         private DateTime fechaFin { get; set; }
         private DateTime fechaInicio { get; set; }
-        private double sueldoBasico { get; set; }
         private Boolean tieneAsignacionFamiliar { get; set; }
-        private float totalDeHoras { get; set; }
         private float totalHorasPorSemana { get; set; }
         private Double valorHora { get; set; }
         private Empleado empleado { get; set; }
         private List<ConceptoDeIngresosDescuentos> conceptos { set; get; }
-        private AFP afp { set; get; }// ya no se importa porque esta en la misma capa
+        private AFP afp { set; get; }
 
-        public double calcularAsignacionFamiliar()
+        public void setEmpleado(Empleado empleado)
         {
-         
-            if(tieneAsignacionFamiliar == true)
-            {
-                return 940 * 0.1;
-            }
-            else
-            {
-                return 0;
-            }
+            this.empleado=empleado;
+        }
+        public Empleado getEmpleado()
+        {
+            return empleado;
         }
 
-        public double calcularDescuentoAfp()
+        public void setTieneAsignacionFamiliar(Boolean tieneAsignacionFamiliar)
         {
-            return afp.getPorcentajeDescuentoAFP()  *  sueldoBasico;
+            this.tieneAsignacionFamiliar=tieneAsignacionFamiliar;
         }
 
-        public void calcularSueldoBasico()
+        public Boolean getTieneAsignacionFamiliar()
         {
-            sueldoBasico = totalDeHoras * valorHora;
+            return tieneAsignacionFamiliar;
         }
-
-        public void calcularSueldoNeto()
-        {
-            
-        }
-
-        public void calcularTotalDeDescuento()
-        {
-
-        }
-
-        public void calcularTotalDeHoras()
-        {
-
-            totalDeHoras = totalHorasPorSemana * conceptos.periodoDePago.semanaDePeriodo;
-               
-        }
-
-        public void calcularTotalDeIngreso()
-        {
-
-        }
-
         public Boolean esContratoVigente()
         {
             if (estadoContrato == true)
