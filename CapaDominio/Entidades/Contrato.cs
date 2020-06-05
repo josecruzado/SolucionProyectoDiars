@@ -15,7 +15,7 @@ namespace CapaDominio.Entidades
         private DateTime fechaFin { get; set; }
         private DateTime fechaInicio { get; set; }
         private Boolean tieneAsignacionFamiliar { get; set; }
-        private float totalHorasPorSemana { get; set; }
+        private int horasPorSemana { get; set; }
         private Double valorHora { get; set; }
         private Empleado empleado { get; set; }
         private List<ConceptoDeIngresosDescuentos> conceptos { set; get; }
@@ -57,22 +57,56 @@ namespace CapaDominio.Entidades
         {
             this.fechaInicio = fechaInicio;
         }
-        public get()
+        public DateTime getFechaInicio()
         {
-            return
+            return fechaInicio;
         }
-        public Boolean esContratoVigente()
+        public void setFechaFin(DateTime fechaFin)
         {
-            if (estadoContrato == true)
-            {
-                return true; //valida si el estado del contrato esta vigente y devuelve true
-            }
-            else
-            {
-                return false// devuelve false si el contrato no esta vigente
-            }
+            this.fechaFin = fechaFin;
         }
+        public DateTime getFechaFin()
+        {
+            return fechaFin;
+        }
+        public void setHorasPorSemana(int horasPorSemana)
+        {
+            this.horasPorSemana=horasPorSemana;
+        }
+        public int gethorasPorSemana()
+        {
+            return horasPorSemana;
+        }
+        public void setValorHora(double valorHora)
+        {
+            this.valorHora = valorHora;
+        }
+        public double getValorHora()
+        {
+            return valorHora;
+        }
+        public void setConceptos(List<ConceptoDeIngresosDescuentos> conceptos)
+        {
+            this.conceptos = conceptos;
+        }
+        public List<ConceptoDeIngresosDescuentos> getConceptos()
+        {
+            return conceptos;
+        }
+        public void setAFP(AFP afp)
+        {
+            this.afp = afp;
+        }
+        public AFP GetAFP()
+        {
+            return afp;
+        }
+
+
         public Boolean esValidoLasHorasALaSemana()
+        {
+
+        }
         public Boolean sonValidasLasFechas()
         {
 
