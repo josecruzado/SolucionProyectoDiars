@@ -16,8 +16,5 @@ namespace CapaDominio.Entidades
         private double totalDescuentos;
         private double totalIngresos;
 
-
-        private int x;h
-        private int s;
     }
 }
