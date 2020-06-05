@@ -15,10 +15,10 @@ namespace CapaDominio.Entidades
         private int totalDeHoras;
         private double totalDescuentos;
         private double totalIngresos;
-
-
-    
-
-
+        
+        public void setAsignacionFamiliar(double asignacionfamiliar)
+        {
+        
+        }
     }
 }
