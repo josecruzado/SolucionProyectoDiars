@@ -15,7 +15,52 @@ namespace CapaDominio.Entidades
         private int totalDeHoras;
         private double totalDescuentos;
         private double totalIngresos;
+        private Contrato contrato;
 
+        public double calcularAsignacionFamiliar()
+        {
+         
+            if(tieneAsignacionFamiliar == true)
+            {
+                return 940 * 0.1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public double calcularDescuentoAfp()
+        {
+            return afp.getPorcentajeDescuentoAFP()  *  sueldoBasico;
+        }
+
+        public void calcularSueldoBasico()
+        {
+            sueldoBasico = totalDeHoras * valorHora;
+        }
+
+        public void calcularSueldoNeto()
+        {
+            
+        }
+
+        public void calcularTotalDeDescuento()
+        {
+
+        }
+
+        public void calcularTotalDeHoras()
+        {
+
+            totalDeHoras = totalHorasPorSemana * conceptos.periodoDePago.semanaDePeriodo;
+               
+        }
+
+        public void calcularTotalDeIngreso()
+        {
+
+        }
 
     }
 }

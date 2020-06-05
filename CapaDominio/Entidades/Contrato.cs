@@ -14,59 +14,12 @@ namespace CapaDominio.Entidades
         private Boolean estadoContrato { get; set; }
         private DateTime fechaFin { get; set; }
         private DateTime fechaInicio { get; set; }
-        private double sueldoBasico { get; set; }
         private Boolean tieneAsignacionFamiliar { get; set; }
-        private float totalDeHoras { get; set; }
         private float totalHorasPorSemana { get; set; }
         private Double valorHora { get; set; }
         private Empleado empleado { get; set; }
         private List<ConceptoDeIngresosDescuentos> conceptos { set; get; }
-        private AFP afp { set; get; }// ya no se importa porque esta en la misma capa
-
-        public double calcularAsignacionFamiliar()
-        {
-         
-            if(tieneAsignacionFamiliar == true)
-            {
-                return 940 * 0.1;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        public double calcularDescuentoAfp()
-        {
-            return afp.getPorcentajeDescuentoAFP()  *  sueldoBasico;
-        }
-
-        public void calcularSueldoBasico()
-        {
-            sueldoBasico = totalDeHoras * valorHora;
-        }
-
-        public void calcularSueldoNeto()
-        {
-            
-        }
-
-        public void calcularTotalDeDescuento()
-        {
-
-        }
-
-        public void calcularTotalDeHoras()
-        {
-
-            totalDeHoras = totalHorasPorSemana * conceptos.periodoDePago.semanaDePeriodo;
-               
-        }
-
-        public void calcularTotalDeIngreso()
-        {
-
-        }
+        private AFP afp { set; get; }
 
         public Boolean esContratoVigente()
         {
