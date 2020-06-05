@@ -29,15 +29,37 @@ namespace CapaDominio.Entidades
         {
             return empleado;
         }
-
         public void setTieneAsignacionFamiliar(Boolean tieneAsignacionFamiliar)
         {
             this.tieneAsignacionFamiliar=tieneAsignacionFamiliar;
         }
-
         public Boolean getTieneAsignacionFamiliar()
         {
             return tieneAsignacionFamiliar;
+        }
+        public void setCargo(String cargo)
+        {
+            this.cargo = cargo;
+        }
+        public String getCargo()
+        {
+            return cargo;
+        }
+        public void setEstadoContrato(Boolean estadoContrato)
+        {
+            this.estadoContrato = estadoContrato;
+        }
+        public Boolean getEstadoContrato()
+        {
+            return estadoContrato;
+        }
+        public void setFechaInicio(DateTime fechaInicio)
+        {
+            this.fechaInicio = fechaInicio;
+        }
+        public get()
+        {
+            return
         }
         public Boolean esContratoVigente()
         {
@@ -50,82 +72,7 @@ namespace CapaDominio.Entidades
                 return false// devuelve false si el contrato no esta vigente
             }
         }
-         
         public Boolean esValidoLasHorasALaSemana()
-        {
-            switch (empleado.getGradoAcademico())
-            {
-                case"Primaria":
-                    {
-                        if (valorHora <= 5 && valorHora <= 10)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-               case "Secundaria":
-                    {
-                        if (valorHora <= 5 && valorHora <= 10)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                case "Bachiller":
-                    {
-                        if (valorHora <= 11 && valorHora <= 20)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                case "Profesional":
-                    {
-                        if (valorHora <= 21 && valorHora <= 30)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;                        
-                        }
-                    }
-                case "Magister":
-                    {
-                        if (valorHora <= 31 && valorHora <= 40)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                case "Doctor":
-                    {
-                        if (valorHora <= 41 && valorHora <= 60)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-            
-            }
-            return false;
-        }
-
         public Boolean sonValidasLasFechas()
         {
 
