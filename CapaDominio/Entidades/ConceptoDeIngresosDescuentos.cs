@@ -66,6 +66,25 @@ namespace CapaDominio.Entidades
             return montoPorHorasExtras;
         }
 
+        public void setMontoPorReintegros(float montoPorReintegros)
+        {
+            this.montoPorReintegros = montoPorReintegros;
+        }
+
+        public float getMontoPorReintegros()
+        {
+            return montoPorReintegros;
+        }
+
+        public void setPeriodoDePago (PeriodoDePago periodoDePago)
+        {
+             this.periodoDePago = periodoDePago;
+        }
+
+        public PeriodoDePago getPeriodoDePago()
+        {
+            return periodoDePago;
+        }
         private double calcularConceptosDeIngresos()
         {
 
