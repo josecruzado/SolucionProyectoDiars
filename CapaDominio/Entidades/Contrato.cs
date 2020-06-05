@@ -10,15 +10,17 @@ namespace CapaDominio.Entidades
 {
     public class Contrato
     {
-        private String cargo { get; set; }
-        private Boolean estadoContrato { get; set; }
-        private DateTime fechaFin { get; set; }
-        private DateTime fechaInicio { get; set; }
-        private Boolean tieneAsignacionFamiliar { get; set; }
-        private int horasPorSemana { get; set; }
-        private Double valorHora { get; set; }
-        private Empleado empleado { get; set; }
-        private AFP afp { set; get; }
+        private String cargo;
+        private Boolean estadoContrato;
+        private DateTime fechaFin;
+        private DateTime fechaInicio;
+        private Boolean tieneAsignacionFamiliar;
+        private int horasPorSemana;
+        private Double valorHora;
+
+        private Empleado empleado;
+
+        private AFP afp;
 
         public void setEmpleado(Empleado empleado)
         {

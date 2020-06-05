@@ -14,7 +14,6 @@ namespace CapaDominio.Entidades
         private float montoPorHorasAusentes{ set; get; }
         private float montoPorHorasExtras{ set; get; }
         private float montoPorReintegros{ set; get; }
-        private PeriodoDePago periodoDePago { set; get; }
 
         public void setMontoDeOtrosDescuentos(float montoDeOtrosDescuentos)
         {
@@ -76,15 +75,6 @@ namespace CapaDominio.Entidades
             return montoPorReintegros;
         }
 
-        public void setPeriodoDePago (PeriodoDePago periodoDePago)
-        {
-             this.periodoDePago = periodoDePago;
-        }
-
-        public PeriodoDePago getPeriodoDePago()
-        {
-            return periodoDePago;
-        }
         private double calcularConceptosDeIngresos()
         {
 

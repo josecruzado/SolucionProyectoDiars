@@ -19,52 +19,44 @@ namespace CapaDominio.Entidades
         {
             this.direccion = direccion;
         }
-        ///////////////////////////////////////////////////////////////////////////
         public String getDireccion()
         {
             return direccion;
         }
-        ///////////////////////////////////////////////////////////////////////////
+
         public void setDni(String dni)
         {
             this.dni = dni;
         }
-        ///////////////////////////////////////////////////////////////////////////
         public String getDni()
         {
             return dni;
         }
-        ///////////////////////////////////////////////////////////////////////////
         public void setFechaDeNacimiento(String fechaDeNacimiento)
         {
             this.fechaDeNacimiento = fechaDeNacimiento;
         }
-        ///////////////////////////////////////////////////////////////////////////
         public  void setGradoAcademico(String gradoAcademico)
         {
             this.gradoAcademico = gradoAcademico;
         }
-        ///////////////////////////////////////////////////////////////////////////
         public String getGradoAcademico()
         {
             return this.gradoAcademico;
         }
-        ///////////////////////////////////////////////////////////////////////////
         public void setNombre (String nombre)
         {
             this.nombre = nombre;
         }
-        ///////////////////////////////////////////////////////////////////////////
+
         public String getNombre()
         {
             return nombre
         }
-        ///////////////////////////////////////////////////////////////////////////
         public void setTelefono(String telefono)
         {
             this.telefono = telefono;
         }
-        ///////////////////////////////////////////////////////////////////////////
         public String getTelefono()
         {
             return telefono;
