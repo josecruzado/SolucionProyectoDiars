@@ -46,7 +46,44 @@ namespace CapaDominio.Entidades
             return sueldoBasico;
         }
 
+        public void setSueldoNeto(double sueldoNeto)
+        {
+            this.sueldoNeto= sueldoNeto;
+        }
 
+        public double getSueldoNeto()
+        {
+            return sueldoNeto;
+        }
 
+        public void setTotalDeHoras(int totalDeHoras)
+        {
+             this.totalDeHoras = totalDeHoras;
+        }
+
+        public int getTotalDeHoras()
+        {
+            return totalDeHoras;
+        }
+
+        public void setTotalDeIngresos(double totalIngresos)
+        {
+            this.totalIngresos = totalIngresos;
+        }
+
+        public double getTotalDeIngresos()
+        {
+            return totalIngresos;
+        }
+
+        public void setTotalDeDescuentos( double totalDescuentos)
+        {
+            this.totalDescuentos = totalDescuentos;
+        }
+
+        public double getTotalDeDescuentos ()
+        {
+            return totalDescuentos;
+        }
     }
 }
