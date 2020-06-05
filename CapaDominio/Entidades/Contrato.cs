@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDominio.Entidades;
+
 
 namespace CapaDominio.Entidades
 {
@@ -17,75 +19,144 @@ namespace CapaDominio.Entidades
         private float totalDeHoras { get; set; }
         private float totalHorasPorSemana { get; set; }
         private Double valorHora { get; set; }
+        private Empleado empleado { get; set; }
+        private List<ConceptoDeIngresosDescuentos> conceptos { set; get; }
+        private AFP afp { set; get; }// ya no se importa porque esta en la misma capa
+
+        public double calcularAsignacionFamiliar()
+        {
+         
+            if(tieneAsignacionFamiliar == true)
+            {
+                return 940 * 0.1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public double calcularDescuentoAfp()
+        {
+            return afp.getPorcentajeDescuentoAFP()  *  sueldoBasico;
+        }
+
+        public void calcularSueldoBasico()
+        {
+            sueldoBasico = totalDeHoras * valorHora;
+        }
+
+        public void calcularSueldoNeto()
+        {
+
+        }
+
+        public void calcularTotalDeDescuento()
+        {
+
+        }
+
+        public void calcularTotalDeHoras()
+        {
+
+            totalDeHoras = totalHorasPorSemana * conceptos.periodoDePago.semanaDePeriodo;
+               
+        }
+
+        public void calcularTotalDeIngreso()
+        {
+
+        }
 
         public Boolean esContratoVigente()
         {
-            return 0;
-        }
-        public Boolean verificarFechaAnterior()//Es contrato valido
-        {
-            if (DateTime.Compare(fechaInicio, fechaFin) <= 0)
+            if (estadoContrato == true)
             {
-                return true;
+                return true; //valida si el estado del contrato esta vigente y devuelve true
+            }
+            else
+            {
+                return false// devuelve false si el contrato no esta vigente
+            }
+        }
+         
+        public Boolean esValidoLasHorasALaSemana()
+        {
+            switch (empleado.getGradoAcademico())
+            {
+                case"Primaria":
+                    {
+                        if (valorHora <= 5 && valorHora <= 10)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+               case "Secundaria":
+                    {
+                        if (valorHora <= 5 && valorHora <= 10)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                case "Bachiller":
+                    {
+                        if (valorHora <= 11 && valorHora <= 20)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                case "Profesional":
+                    {
+                        if (valorHora <= 21 && valorHora <= 30)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;                        }
+                    }
+                case "Magister":
+                    {
+                        if (valorHora <= 31 && valorHora <= 40)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                case "Doctor":
+                    {
+                        if (valorHora <= 41 && valorHora <= 60)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+            
             }
             return false;
         }
 
-        public Boolean esFechaInicioValida()
+        public Boolean sonValidasLasFechas()
         {
-            if (DateTime.Compare(fechaInicio, fechaFin) > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-        public Boolean esFechaFinValida()
-        {
-            TimeSpan diferencia = fechaFin - fechaInicio;
-            if (diferencia.TotalDays > 90 && diferencia.TotalDays < 365)
-            {
-                return true;
-            }
-            return false;
-        }
-        public Boolean r04EsHorasContratadasValida()
-        {
-            if (totalHorasPorSemana >= 8 && totalHorasPorSemana <= 40)
-            {
-                return true;
-            }
-            return false;
-        }
 
-        public double r05CalcularValorPorHora()
-        {
-            var seed = Environment.TickCount;
-            var random = new Random(seed);
-            switch (cargo)
-            {
-                case "primaria":
-                    return random.Next(5, 10);
-                case "secundaria":
-                    return random.Next(5, 10);
-                case "bachiller":
-                    return random.Next(11, 20);
-                case "profesional":
-                    return random.Next(21, 30);
-                case "magister":
-                    return random.Next(31, 40);
-                case "doctor":
-                    return random.Next(41, 60);
-            }
-            return 0;
-        }
-
-        public double r08CalcularAsignacionFamiliar()
-        {
-            if (tieneAsignacionFamiliar == true)
-            {
-                return 40 * 0.1;
-            }
-            return 0;
         }
     }
 }

@@ -8,5 +8,8 @@ namespace CapaDominio.Entidades
 {
     public class Boleta
     {
+        private DateTime fechaDePago { set; get; }
+        private int idBoletaDePago { set; get; }
+
     }
 }
