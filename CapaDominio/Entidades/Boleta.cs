@@ -18,7 +18,14 @@ namespace CapaDominio.Entidades
         
         public void setAsignacionFamiliar(double asignacionfamiliar)
         {
-        
+            this.asignacionFamiliar= asignacionFamiliar;
         }
+
+        public double getAsignacionFamiliar()
+        {
+            return asignacionFamiliar;
+        }
+
+
     }
 }
