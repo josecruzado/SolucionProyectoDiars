@@ -50,7 +50,7 @@ namespace CapaDominio.Entidades
 
         public int getSemanasDePeriodo()
         {
-            return semanasDePeriodo;
+            return semanasDePeriodo
         }
 
         public Boolean sePuedeProcesar() 
