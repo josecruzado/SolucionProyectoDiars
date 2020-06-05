@@ -18,7 +18,35 @@ namespace CapaDominio.Entidades
         
         public void setAsignacionFamiliar(double asignacionfamiliar)
         {
-        
+            this.asignacionFamiliar= asignacionFamiliar;
         }
+
+        public double getAsignacionFamiliar()
+        {
+            return asignacionFamiliar;
+        }
+
+        public void setDescuentoPorAFP(double descuentoPorAFP)
+        {
+            this.descuentoPorAFP = descuentoPorAFP;
+        }
+
+        public double getDescuentoPorAFP()
+        {
+            return descuentoPorAFP;
+        }
+
+        public void setSueldoBasico(double sueldoBasico)
+        {
+            this.descuentoPorAFP = descuentoPorAFP;
+        }
+
+        public double getSueldoBasico()
+        {
+            return sueldoBasico;
+        }
+
+
+
     }
 }
