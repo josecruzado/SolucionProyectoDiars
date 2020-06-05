@@ -12,5 +12,6 @@ namespace CapaDominio.Entidades
         private int idBoletaDePago { set; get; }
 
         private int x;
+        private int s;
     }
 }
