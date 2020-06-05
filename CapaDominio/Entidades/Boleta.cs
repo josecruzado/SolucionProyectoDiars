@@ -17,5 +17,7 @@ namespace CapaDominio.Entidades
         private double totalIngresos;
 
 
+        private int x;h
+        private int s;
     }
 }
