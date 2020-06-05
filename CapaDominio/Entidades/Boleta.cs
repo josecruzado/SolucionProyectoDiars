@@ -11,5 +11,6 @@ namespace CapaDominio.Entidades
         private DateTime fechaDePago { set; get; }
         private int idBoletaDePago { set; get; }
 
+        cualquier huevada
     }
 }
