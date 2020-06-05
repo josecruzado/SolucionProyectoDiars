@@ -9,6 +9,8 @@ namespace CapaDominio.Entidades
     public class AFP
     {
         private float porcentajeDescuentoAFP { set; get; }
+
+
         public void setPorcentajeDescuentoAFP(float porcentajeDescuentoAFP)
         {
             this.porcentajeDescuentoAFP = porcentajeDescuentoAFP;
