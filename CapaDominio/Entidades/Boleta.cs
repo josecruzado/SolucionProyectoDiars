@@ -8,8 +8,14 @@ namespace CapaDominio.Entidades
 {
     public class Boleta
     {
-        private DateTime fechaDePago { set; get; }
-        private int idBoletaDePago { set; get; }
+        private double asignacionFamiliar;
+        private double descuentoPorAFP;
+        private double sueldoBasico;
+        private double sueldoNeto;
+        private int totalDeHoras;
+        private double totalDescuentos;
+        private double totalIngresos;
+
 
     }
 }
