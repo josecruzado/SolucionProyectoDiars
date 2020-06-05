@@ -21,6 +21,24 @@ namespace CapaDominio.Entidades
         private List<ConceptoDeIngresosDescuentos> conceptos { set; get; }
         private AFP afp { set; get; }
 
+        public void setEmpleado(Empleado empleado)
+        {
+            this.empleado=empleado;
+        }
+        public Empleado getEmpleado()
+        {
+            return empleado;
+        }
+
+        public void setTieneAsignacionFamiliar(Boolean tieneAsignacionFamiliar)
+        {
+            this.tieneAsignacionFamiliar=tieneAsignacionFamiliar;
+        }
+
+        public Boolean getTieneAsignacionFamiliar()
+        {
+            return tieneAsignacionFamiliar;
+        }
         public Boolean esContratoVigente()
         {
             if (estadoContrato == true)

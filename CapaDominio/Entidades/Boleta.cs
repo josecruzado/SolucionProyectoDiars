@@ -17,16 +17,15 @@ namespace CapaDominio.Entidades
         private double totalIngresos;
         private Contrato contrato;
 
-        public double calcularAsignacionFamiliar()
+        public void calcularAsignacionFamiliar()
         {
-         
-            if(tieneAsignacionFamiliar == true)
+            if(contrato.getTieneAsignacionFamiliar == true)
             {
-                return 940 * 0.1;
+                asignacionFamiliar = 940 * 0.1;
             }
             else
             {
-                return 0;
+                asignacionFamiliar = 0;
             }
         }
 
