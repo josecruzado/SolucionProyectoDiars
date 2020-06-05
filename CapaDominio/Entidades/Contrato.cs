@@ -105,11 +105,11 @@ namespace CapaDominio.Entidades
 
         public Boolean esValidoLasHorasALaSemana()
         {
-
+            return true;
         }
         public Boolean sonValidasLasFechas()
         {
-
+            return true;
         }
     }
 }
