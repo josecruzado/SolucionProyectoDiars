@@ -16,20 +16,25 @@ namespace CapaDominio.Entidades
         {
 			this.idPlanilla = idPlanilla;
         }
-
 		public int getPlanilla()
         {
             return idPlanilla;
         }
-
 		public void setFechaPlanilla(DateTime fechaPlanilla)
         {
 			this.fechaPlanilla = fechaPlanilla;
         }
-
 		public DateTime getfechaPlanilla()
         {
 			return fechaPlanilla;
         } 
+		public void setBoleta(Boleta boleta)
+        {
+			this.boleta = boleta;
+        }
+		public Boleta getBoleta()
+        {
+			return boleta;
+        }
 	}
 }
