@@ -44,6 +44,9 @@ namespace CapaDominio.Entidades
             return this.gradoAcademico;
         }
         public void setNombre (String nombre)
+        {
+            this.nombre = nombre;
+        }
         public String getNombre()
         {
             return nombre

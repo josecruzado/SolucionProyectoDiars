@@ -95,14 +95,99 @@ namespace CapaDominio.Entidades
             return afp;
         }
 
-
         public Boolean esValidoLasHorasALaSemana()
         {
-            return true;
+            if(horasPorSemana >= 8 && horasPorSemana <= 40)
+            {
+                return true;
+            }
+            return false;
         }
         public Boolean sonValidasLasFechas()
         {
-            return true;
+            TimeSpan resultado = fechaFin - fechaInicio;
+            int dias = resultado.Days();
+
+            if(dias >= 90 && dias <= 365)
+            {
+                return true;
+            }
+            return false;
         }
+        public Boolean ValorPorHora()
+        {
+            switch(empleado.getGradoAcademico())
+            {
+                case "Primaria":
+                    {
+                        if(valorHora >= 5 && valorHora <= 10)
+                        {
+                            return true;
+                        }
+                        return false;
+                    }
+                case "Secundaria":
+                    {
+                       if(valorHora >= 5 && valorHora <= 10)
+                        {
+                            return true;
+                        }
+                        return false; 
+                    }
+                case "Bachiller":
+                    {
+                        if(valorHora >= 11 && valorHora <= 20)
+                        {
+                            return true;
+                        }
+                        return false;   
+                    }
+                case "Profesional":
+                    {
+                        if(valorHora >= 21 && valorHora <= 30)
+                        {
+                            return true;
+                        }
+                        return false;
+                    }
+                case "Magister":
+                    {
+                        if(valorHora >= 31 && valorHora <= 40)
+                        {
+                            return true;
+                        }
+                        return false;
+                    }
+                case "Doctor":
+                    {
+                        if(valorHora >= 41 && valorHora <= 60)
+                        {
+                            return true;
+                        }
+                        return false;
+                    }
+            }
+            return false;
+        }
+        public Boolean eslaFechaInicioValida(DateTime fechaFinal)
+        {
+            int resultado = DateTime.Compare(fechaFinal,fechaInicio);
+            if(resultado < 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public Boolean esVigente()
+        {
+            DateTime fechaActual = DateTime.Now();
+            int resultado = DateTime.Compare(fechaActual,fechaFin);
+            if(resultado >= 0 && estadoContrato == true)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

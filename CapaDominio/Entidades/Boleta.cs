@@ -103,6 +103,38 @@ namespace CapaDominio.Entidades
             return periodoDePago;
         }
 
-
+        public void calcularAsignacionFamiliar()
+        {
+            if(contrato.getTieneAsignacionFamiliar() == true)
+            {
+                asignacionFamiliar = 930 * 0.1;
+            }else{
+                asignacionFamiliar = 0;
+            }
+        }
+        public void calcularTotalDeHoras()
+        {
+            totalDeHoras = periodoDePago.getSemanasDePeriodo() * contrato.gethorasPorSemana();
+        }
+        public void calcularSueldoBasico()
+        {
+            sueldoBasico = totalDeHoras * contrato.getValorHora();
+        }
+        public void calcularDescuentoAFP()
+        {
+            descuentoPorAFP = sueldoBasico * contrato.GetAFP().getPorcentajeDescuentoAFP();
+        }
+        public void calcularTotalDeIngreso()
+        {
+            totalIngresos = sueldoBasico + asignacionFamiliar + conceptos.calcularConceptosDeIngresos();
+        }
+        public void calcularTotalDeDescuento()
+        {
+            totalDescuentos = descuentoPorAFP + conceptos.calularConceptoDeDescuentos();
+        }
+        public void calcularSueldoNeto()
+        {
+            sueldoNeto = totalIngresos - totalDescuentos;
+        }
     }
 }

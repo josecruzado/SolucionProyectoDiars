@@ -64,14 +64,13 @@ namespace CapaDominio.Entidades
             return montoPorReintegros;
         }
 
-        private double calcularConceptosDeIngresos()
+        public double calcularConceptosDeIngresos()
         {
-
+            return montoPorHorasExtras + montoPorReintegros + montoDeOtrosIngresos;
         }
-
-        private double ConceptoDeDescuentos()
+        public double calularConceptoDeDescuentos()
         {
-
+            return montoPorHorasAusentes + montoPorAdelantos + montoDeOtrosDescuentos;
         }
     }
 }
