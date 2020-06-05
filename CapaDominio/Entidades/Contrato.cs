@@ -18,7 +18,6 @@ namespace CapaDominio.Entidades
         private int horasPorSemana { get; set; }
         private Double valorHora { get; set; }
         private Empleado empleado { get; set; }
-        private List<ConceptoDeIngresosDescuentos> conceptos { set; get; }
         private AFP afp { set; get; }
 
         public void setEmpleado(Empleado empleado)
@@ -84,14 +83,6 @@ namespace CapaDominio.Entidades
         public double getValorHora()
         {
             return valorHora;
-        }
-        public void setConceptos(List<ConceptoDeIngresosDescuentos> conceptos)
-        {
-            this.conceptos = conceptos;
-        }
-        public List<ConceptoDeIngresosDescuentos> getConceptos()
-        {
-            return conceptos;
         }
         public void setAFP(AFP afp)
         {
