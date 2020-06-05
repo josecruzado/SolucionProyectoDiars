@@ -26,6 +26,13 @@ namespace CapaDominio.Entidades
             return asignacionFamiliar;
         }
 
+        public void setDescuentoPorAFP(double descuentoPorAFP)
+        {
+            this.descuentoPorAFP = descuentoPorAFP;
+        }
+
+
+
 
     }
 }
