@@ -31,6 +31,20 @@ namespace CapaDominio.Entidades
             this.descuentoPorAFP = descuentoPorAFP;
         }
 
+        public double getDescuentoPorAFP()
+        {
+            return descuentoPorAFP;
+        }
+
+        public void setSueldoBasico(double sueldoBasico)
+        {
+            this.descuentoPorAFP = descuentoPorAFP;
+        }
+
+        public double getSueldoBasico()
+        {
+            return sueldoBasico;
+        }
 
 
 
