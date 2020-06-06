@@ -47,6 +47,7 @@
     <Compile Include="Entidades\Contrato.cs" />
     <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\PeriodoDePago.cs" />
+    <Compile Include="Entidades\Planilla.cs"/>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
