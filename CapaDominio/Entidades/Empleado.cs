@@ -8,13 +8,23 @@ namespace CapaDominio.Entidades
 {
     public class Empleado
     {
+        private String IdEmpleado;
         private String direccion;
         private String dni;
-        private String fechaDeNacimiento;
+        private DateTime fechaDeNacimiento;
         private String gradoAcademico;
         private String nombre;
         private String telefono;
+        private String estadoCivil;
 
+        public void setIdEmpleado(String IdEmpleado)
+        {
+            this.IdEmpleado = IdEmpleado;
+        }
+        public String getIdEmpleado()
+        {
+            return IdEmpleado;
+        }
         public void setDireccion(String direccion)
         {
             this.direccion = direccion;
@@ -31,9 +41,13 @@ namespace CapaDominio.Entidades
         {
             return dni;
         }
-        public void setFechaDeNacimiento(String fechaDeNacimiento)
+        public void setFechaDeNacimiento(DateTime fechaDeNacimiento)
         {
             this.fechaDeNacimiento = fechaDeNacimiento;
+        }
+        public DateTime getFechaDeNacimiento()
+        {
+            return fechaDeNacimiento;
         }
         public  void setGradoAcademico(String gradoAcademico)
         {
@@ -49,7 +63,7 @@ namespace CapaDominio.Entidades
         }
         public String getNombre()
         {
-            return nombre
+            return nombre;
         }
         public void setTelefono(String telefono)
         {
@@ -58,6 +72,14 @@ namespace CapaDominio.Entidades
         public String getTelefono()
         {
             return telefono;
+        }
+        public void setEstadoCivil(String estadoCivil)
+        {
+            this.estadoCivil = estadoCivil;
+        }
+        public String getEstadoCivil()
+        {
+            return estadoCivil;
         }
 
     }

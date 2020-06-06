@@ -8,15 +8,15 @@ namespace CapaDominio.Entidades
 {
 	public class Planilla
 	{
-		private int idPlanilla;
+		private String idPlanilla;
 		private DateTime fechaPlanilla;
 		private Boleta boleta;
 
-		public void setIdPlanilla(int idPlanilla)
+		public void setIdPlanilla(String idPlanilla)
         {
 			this.idPlanilla = idPlanilla;
         }
-		public int getPlanilla()
+		public String getPlanilla()
         {
             return idPlanilla;
         }

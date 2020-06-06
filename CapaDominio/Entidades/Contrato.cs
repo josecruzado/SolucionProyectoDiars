@@ -106,7 +106,7 @@ namespace CapaDominio.Entidades
         public Boolean sonValidasLasFechas()
         {
             TimeSpan resultado = fechaFin - fechaInicio;
-            int dias = resultado.Days();
+            int dias = resultado.Days;
 
             if(dias >= 90 && dias <= 365)
             {
@@ -180,7 +180,7 @@ namespace CapaDominio.Entidades
         }
         public Boolean esVigente()
         {
-            DateTime fechaActual = DateTime.Now();
+            DateTime fechaActual = DateTime.Now;
             int resultado = DateTime.Compare(fechaActual,fechaFin);
             if(resultado >= 0 && estadoContrato == true)
             {

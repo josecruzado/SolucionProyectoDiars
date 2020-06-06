@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADO_SQLServer\AfpDAO.cs" />
     <Compile Include="ADO_SQLServer\ContratoDAO.cs" />
     <Compile Include="ADO_SQLServer\EmpleadoDAO.cs" />
     <Compile Include="ADO_SQLServer\GestorSQL.cs" />

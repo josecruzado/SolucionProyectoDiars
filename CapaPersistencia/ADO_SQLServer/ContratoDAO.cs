@@ -10,7 +10,7 @@ namespace CapaPersistencia.ADO_SQLServer
     public class ContratoDAO
     {
         private GestorSQL gestorSQL;
-
+        private EmpleadoDAO empleadoDAO;
         public ContratoDAO(GestorSQL gestorSQL)
         {
             this.gestorSQL = gestorSQL;

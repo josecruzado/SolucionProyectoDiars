@@ -48,7 +48,7 @@ namespace CapaDominio.Entidades
 
         public Boolean sePuedeProcesar() 
         {
-            DateTime fechaActual = DateTime.Now();
+            DateTime fechaActual = DateTime.Now;
             int resultado = DateTime.Compare(fechaActual,fechaFin);
             if(resultado <=0)
             {

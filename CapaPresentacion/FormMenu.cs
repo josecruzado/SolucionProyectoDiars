@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CapaDominio.Entidades;
+using CapaAplicacion.Servicios;
 namespace CapaPresentacion
 {
     public partial class FormMenu : Form
@@ -15,6 +16,25 @@ namespace CapaPresentacion
         public FormMenu()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CrudEmpleado crudEmpleado = new CrudEmpleado();
+            Empleado empleado = crudEmpleado.buscarEmpleado(txtDni.Text);
+            txtNombre.Text = empleado.getNombre();
+            txtDireccion.Text = empleado.getDireccion();
+            txtEstadoCivil.Text = empleado.getEstadoCivil();
         }
     }
 }

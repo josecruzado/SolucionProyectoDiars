@@ -18,7 +18,7 @@ namespace CapaPersistencia.ADO_SQLServer
             try
             {
                 conexion = new SqlConnection();
-                conexion.ConnectionString = "Data Source=(local);Initial Catalog=BaseGestionContratos;Integrated Security=true";
+                conexion.ConnectionString = "Data Source=(local);Initial Catalog=ProyectoDiars;Integrated Security=true";
                 conexion.Open();
             }
             catch (Exception err)
@@ -86,7 +86,9 @@ namespace CapaPersistencia.ADO_SQLServer
             {
                 SqlCommand comandoSQL = conexion.CreateCommand();
                 if (transaccion != null)
+                {
                     comandoSQL.Transaction = transaccion;
+                }
                 comandoSQL.CommandText = sentenciaSQL;
                 comandoSQL.CommandType = CommandType.Text;
                 return comandoSQL.ExecuteReader();
