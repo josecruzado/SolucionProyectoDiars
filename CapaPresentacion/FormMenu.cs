@@ -36,5 +36,15 @@ namespace CapaPresentacion
             txtDireccion.Text = empleado.getDireccion();
             txtEstadoCivil.Text = empleado.getEstadoCivil();
         }
+
+        private void procesoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gestionarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
