@@ -15,10 +15,20 @@ namespace CapaAplicacion.Servicios
     {
         private IGestorAccesoDatos gestorDatos;
         private IContrato contratoDAO;
+        private IEmpleado empleadoDAO;
 
+        public Empleado buscarEmpleado(String Dni)
+        {
+            gestorDatos.abrirConexion();
+            Empleado aux = empleadoDAO.buscarPorDni(Dni);
+            gestorDatos.cerrarConexion();
+            return aux;
+        }
         public Contrato buscarUltimoContratoActivo(String Dni)
         {
-            Contrato aux = null;
+            Contrato aux = new Contrato();
+            DateTime fech = new DateTime(1990, 8, 1, 0, 0, 0);
+            aux.setFechaFin(fech);
             gestorDatos.abrirConexion();
             List<Contrato> contratos = contratoDAO.listarContratos(); //select * from Contrato
             gestorDatos.cerrarConexion();
@@ -28,7 +38,8 @@ namespace CapaAplicacion.Servicios
                 Empleado emp = contrato.getEmpleado();
                 if(emp.getDni() == Dni)
                 {
-                    if(contrato.esVigente() == true)
+                    int resultado = DateTime.Compare(aux.getFechaFin(), contrato.getFechaFin());
+                    if(resultado < 0)
                     {
                         aux = contrato;
                     }
@@ -36,6 +47,30 @@ namespace CapaAplicacion.Servicios
             }
             return aux;
         }
+        public Contrato buscarUltimoContrato(String Dni,Contrato contratoActual)
+        {
+            Contrato aux = new Contrato();
+            DateTime fech = new DateTime(1990, 8, 1, 0, 0, 0);
+            aux.setFechaFin(fech);
+            gestorDatos.abrirConexion();
+            List<Contrato> contratos = contratoDAO.listarContratos(); //select * from Contrato
+            gestorDatos.cerrarConexion();
+
+            foreach (Contrato contrato in contratos)
+            {
+                Empleado emp = contrato.getEmpleado();
+                if (emp.getDni() == Dni)
+                {
+                    int resultado = DateTime.Compare(aux.getFechaFin(), contrato.getFechaFin());
+                    if (resultado < 0 && contrato.Equals(contratoActual) != false )
+                    {
+                        aux = contrato;
+                    }
+                }
+            }
+            return aux;
+        }
+
 
     }
 }

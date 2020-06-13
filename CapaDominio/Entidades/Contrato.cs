@@ -114,7 +114,7 @@ namespace CapaDominio.Entidades
             }
             return false;
         }
-        public Boolean ValorPorHora()
+        public Boolean esValorPorHoraValido()
         {
             switch(empleado.getGradoAcademico())
             {
