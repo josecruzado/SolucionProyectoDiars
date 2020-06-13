@@ -181,7 +181,7 @@ namespace CapaDominio.Entidades
         public Boolean esVigente()
         {
             DateTime fechaActual = DateTime.Now;
-            int resultado = DateTime.Compare(fechaActual,fechaFin);
+            int resultado = DateTime.Compare(fechaActual,fechaFin); 
             if(resultado >= 0 && estadoContrato == true)
             {
                 return true;

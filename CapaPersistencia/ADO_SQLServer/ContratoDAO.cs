@@ -20,5 +20,10 @@ namespace CapaPersistencia.ADO_SQLServer
         {
 
         }
+
+        public List<Contrato> contratos()
+        {
+            return null;
+        }
     }
 }
