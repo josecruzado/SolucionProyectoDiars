@@ -14,15 +14,28 @@ namespace CapaDominio.Entidades
         private float montoPorHorasAusentes{ set; get; }
         private float montoPorHorasExtras{ set; get; }
         private float montoPorReintegros{ set; get; }
-        private Boleta boleta;
+        
+        private Contrato contrato;
+        
+        private PeriodoDePago periodoDePago;
 
-        public void setBoleta(Boleta boleta)
+        public void setContrato(Contrato contrato)
         {
-            this.boleta = boleta;
+            this.contrato = contrato;
         }
-        public Boleta getBoleta()
+
+        Contrato getContrato()
         {
-            return boleta;
+            return contrato;
+        }
+        public void setPeridoDePago(PeriodoDePago periodoDePago)
+        {
+            this.periodoDePago = periodoDePago;
+        }
+
+        public PeriodoDePago getPeriodoDePago()
+        {
+            return periodoDePago;
         }
 
         public void setMontoDeOtrosDescuentos(float montoDeOtrosDescuentos)

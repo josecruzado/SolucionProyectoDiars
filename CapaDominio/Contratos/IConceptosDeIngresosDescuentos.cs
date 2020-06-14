@@ -8,7 +8,7 @@ namespace CapaDominio.Contratos
 {
     public interface IConceptosDeIngresosDescuentos
     {
-        IConceptosDeIngresosDescuentos buscarPorBoleta(IBoletaDePago boleta);
+        ConceptoDeIngresosDescuentos buscarPorContratoYPeriodo(Contrato contrato,PeriodoDePago periodoDePago);
         void guardar(ConceptoDeIngresosDescuentos concepto);
     }
 }

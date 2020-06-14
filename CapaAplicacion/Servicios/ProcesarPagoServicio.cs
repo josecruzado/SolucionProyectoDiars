@@ -33,23 +33,6 @@ namespace CapaAplicacion.Servicios
             return aux;
         }
 
-        public void calcularConceptos(float montoDeOtrosDescuentos, float montoDeOtrosIngresos,float montoPorAdelantos,float montoPorHorasAusentes,float montoPorHorasExtras, float montoPorReintegros, Contrato contrato)
-        {
-            ConceptoDeIngresosDescuentos concepto = new ConceptoDeIngresosDescuentos();
-            concepto.setMontoDeOtrosDescuentos(montoDeOtrosDescuentos);
-            concepto.setMontoDeOtrosIngresos(montoDeOtrosIngresos);
-            concepto.setMontoPorAdelantos(montoPorAdelantos);
-            concepto.setMontoPorHorasAusentes(montoPorHorasAusentes);
-            concepto.setMontoPorHorasExtras(montoPorHorasExtras);
-            concepto.setMontoPorReintegros(montoPorReintegros);
-            concepto.calcularConceptosDeIngresos();
-            concepto.calularConceptoDeDescuentos();
-            concepto.setBoleta(new Boleta());
-            gestorDatos.abrirConexion();
-            conceptoDAO.guardar(concepto);
-            gestorDatos.cerrarConexion()
-
-        }
 
         public Boleta generarBoleta(Contrato contrato,ConceptoDeIngresosDescuentos concepto)
         {
@@ -65,14 +48,15 @@ namespace CapaAplicacion.Servicios
             boleta.calcularSueldoNeto();
             return boleta;
         }
-        public void generarBoletas(List<Contrato> contratosVigentes)
+        public void generarBoletas(List<Contrato> contratosVigentes, PeriodoDePago periodoDePago)
         {
             gestorDatos.abrirConexion();
             foreach(Contrato contrato in contratosVigentes)
             {
-                
+                ConceptoDeIngresosDescuentos aux = conceptoDAO.buscarPorContratoYPeriodo(contrato, periodoDePago);
+                boletaDAO.guardar(generarBoleta(contrato, aux));
             }
-            gestorDatos.cerrarConexion()
+            gestorDatos.cerrarConexion();
         }
 
     }
