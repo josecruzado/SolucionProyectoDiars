@@ -16,8 +16,11 @@ namespace CapaPersistencia.ADO_SQLServer
             this.gestorSQL = gestorSQL;
         }
 
-        public void crearContrato(Contrato contrato)
+        public void guardarContrato(Contrato contrato)
         {
+            string insertarContratoSQL;
+                insertarContratoSQL= "insert into contrato(idcontrato,cargo,estadocontrato,fechafin,fechainicio,tieneasignacionfamiliar,valorhora,idempleado,idafp) " +
+                "values(@idcontrato,@cargo,@estadocontrato,@fechafin,@fechainicio,@tieneasignacionfamiliar,@valorhora,@idempleado,@idafp)";
 
         }
 
