@@ -8,11 +8,20 @@ namespace CapaDominio.Entidades
 {
     public class PeriodoDePago
     {
+        private String idPeriodoDePago;
         private String estado;
         private DateTime fechaFin;
         private DateTime fechaInicio;
         private int semanasDePeriodo;
 
+        public void setidPeriodoDePago(String idPeriodoDePago)
+        {
+            this.idPeriodoDePago = idPeriodoDePago;
+        }
+        public String getidPeriodoDePago()
+        {
+            return idPeriodoDePago;
+        }
         public void setEstado(String estado)
         {
             this.estado=estado;

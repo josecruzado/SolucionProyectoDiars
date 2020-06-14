@@ -45,6 +45,7 @@
     <Compile Include="ADO_SQLServer\ContratoDAO.cs" />
     <Compile Include="ADO_SQLServer\EmpleadoDAO.cs" />
     <Compile Include="ADO_SQLServer\GestorSQL.cs" />
+    <Compile Include="ADO_SQLServer\PeriodoDePagoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

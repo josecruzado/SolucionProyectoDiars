@@ -16,6 +16,7 @@ namespace CapaAplicacion.Servicios
         private IContrato contratoDAO;
         private IBoletaDePago boletaDAO;
         private IConceptosDeIngresosDescuentos conceptoDAO;
+        private IPeriodoDePago periodoDePagoDAO;
         public List<Contrato> buscarContratosActivos()
         {
             List<Contrato> aux = new List<Contrato>();
@@ -57,6 +58,7 @@ namespace CapaAplicacion.Servicios
                 boletaDAO.guardar(generarBoleta(contrato, aux));
             }
             periodoDePago.setEstado("Procesado");
+            //periodoDePagoDAO.ac
             gestorDatos.cerrarConexion();
         }
 
