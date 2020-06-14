@@ -12,13 +12,12 @@ namespace CapaDominio.Servicios
         public void existePerdioDePago(PeriodoDePago periodoDePago) {
 
             //PASO 4 PROCESAR PAGO
-            if (periodoDePago.sePuedeProcesar() == false) 
+            if (periodoDePago.sePuedeProcesar() == false)
             {
                 throw new Exception("El periodo de pago no esta activo");
             }
 
         }
-        
 
     }
 }

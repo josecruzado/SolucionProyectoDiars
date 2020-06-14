@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDominio.Entidades;
-
 namespace CapaDominio.Contratos
 {
-    public interface IPeriodoDePago 
+    public interface IConceptosDeIngresosDescuentos
     {
-        PeriodoDePago buscar(String id);
-        PeriodoDePago buscarPorfecha(DateTime fecha);
+        IConceptosDeIngresosDescuentos buscarPorBoleta(IBoletaDePago boleta);
+        void guardar(ConceptoDeIngresosDescuentos concepto);
     }
 }

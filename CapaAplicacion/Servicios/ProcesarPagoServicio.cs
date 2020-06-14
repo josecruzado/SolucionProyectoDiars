@@ -14,6 +14,8 @@ namespace CapaAplicacion.Servicios
     {
         private IGestorAccesoDatos gestorDatos;
         private IContrato contratoDAO;
+        private IBoletaDePago boletaDAO;
+        private IConceptosDeIngresosDescuentos conceptoDAO;
         public List<Contrato> buscarContratosActivos()
         {
             List<Contrato> aux = new List<Contrato>();
@@ -23,7 +25,7 @@ namespace CapaAplicacion.Servicios
 
             foreach (Contrato contrato in contratos) {
 
-                if (contrato.getEstadoContrato() == true) 
+                if (contrato.getEstadoContrato() == true)
                 {
                     aux.Add(contrato);
                 }
@@ -31,6 +33,47 @@ namespace CapaAplicacion.Servicios
             return aux;
         }
 
+        public void calcularConceptos(float montoDeOtrosDescuentos, float montoDeOtrosIngresos,float montoPorAdelantos,float montoPorHorasAusentes,float montoPorHorasExtras, float montoPorReintegros, Contrato contrato)
+        {
+            ConceptoDeIngresosDescuentos concepto = new ConceptoDeIngresosDescuentos();
+            concepto.setMontoDeOtrosDescuentos(montoDeOtrosDescuentos);
+            concepto.setMontoDeOtrosIngresos(montoDeOtrosIngresos);
+            concepto.setMontoPorAdelantos(montoPorAdelantos);
+            concepto.setMontoPorHorasAusentes(montoPorHorasAusentes);
+            concepto.setMontoPorHorasExtras(montoPorHorasExtras);
+            concepto.setMontoPorReintegros(montoPorReintegros);
+            concepto.calcularConceptosDeIngresos();
+            concepto.calularConceptoDeDescuentos();
+            concepto.setBoleta(new Boleta());
+            gestorDatos.abrirConexion();
+            conceptoDAO.guardar(concepto);
+            gestorDatos.cerrarConexion()
+
+        }
+
+        public Boleta generarBoleta(Contrato contrato,ConceptoDeIngresosDescuentos concepto)
+        {
+            Boleta boleta = new Boleta();
+            boleta.setContrato(contrato);
+            boleta.setConcepto(concepto);
+            boleta.calcularAsignacionFamiliar();
+            boleta.calcularTotalDeHoras();
+            boleta.calcularSueldoBasico();
+            boleta.calcularDescuentoAFP();
+            boleta.calcularTotalDeIngreso();
+            boleta.calcularTotalDeDescuento();
+            boleta.calcularSueldoNeto();
+            return boleta;
+        }
+        public void generarBoletas(List<Contrato> contratosVigentes)
+        {
+            gestorDatos.abrirConexion();
+            foreach(Contrato contrato in contratosVigentes)
+            {
+                
+            }
+            gestorDatos.cerrarConexion()
+        }
 
     }
 

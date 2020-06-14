@@ -14,6 +14,16 @@ namespace CapaDominio.Entidades
         private float montoPorHorasAusentes{ set; get; }
         private float montoPorHorasExtras{ set; get; }
         private float montoPorReintegros{ set; get; }
+        private Boleta boleta;
+
+        public void setBoleta(Boleta boleta)
+        {
+            this.boleta = boleta;
+        }
+        public Boleta getBoleta()
+        {
+            return boleta;
+        }
 
         public void setMontoDeOtrosDescuentos(float montoDeOtrosDescuentos)
         {
