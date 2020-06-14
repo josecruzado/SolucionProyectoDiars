@@ -51,13 +51,15 @@ namespace CapaAplicacion.Servicios
         public void generarBoletas(List<Contrato> contratosVigentes, PeriodoDePago periodoDePago)
         {
             gestorDatos.abrirConexion();
-            foreach(Contrato contrato in contratosVigentes)
+            foreach (Contrato contrato in contratosVigentes)
             {
                 ConceptoDeIngresosDescuentos aux = conceptoDAO.buscarPorContratoYPeriodo(contrato, periodoDePago);
                 boletaDAO.guardar(generarBoleta(contrato, aux));
             }
+            periodoDePago.setEstado("Procesado");
             gestorDatos.cerrarConexion();
         }
+
 
     }
 
